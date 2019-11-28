@@ -17,6 +17,7 @@ pipeline {
         sh 'echo $USER'
         sh 'echo whoami'
       }
+    }
       stage('Docker Build') {
       steps {
         sh '/usr/bin/docker build -t address-service .'
@@ -30,6 +31,5 @@ pipeline {
           sh 'docker push 887625267599.dkr.ecr.ap-south-1.amazonaws.com/address-service:latest'
        }
       }
-    }
     }
   }
